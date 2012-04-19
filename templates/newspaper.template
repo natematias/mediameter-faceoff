@@ -1,2 +1,6 @@
-<div>Newspaper: <%= newspaper %></div>
-<div>Total: <%= total %> </div>
+<div><strong><%= source %></strong></div>
+<div>Total: <%= newspaper.total %> </div>
+<div>Sports: <%= (newspaper["sports"] * (newspaper.total_articles/100)).toFixed(2) %>% </div>
+<div>Foreign: <%= (newspaper["international"] * (newspaper.total_articles/100)).toFixed(2) %>% </div>
+<div>International: <%= (newspaper["foreign"] * (newspaper.total_articles/100)).toFixed(2) %>% </div>
+<div>Arts: <%= (newspaper["arts"] * (newspaper.total_articles/100)).toFixed(2) %>% </div>

@@ -39,7 +39,8 @@
               type: "GET",
               dataType: "text",
               success: function(data){
-                $("#newspaper_comparison").append(_.template(data, {newspaper:that.right_newspaper, year:that.year, total:that.right_news_data[that.year]["total"]}));
+                $("#newspaper_comparison").html(_.template(data, {source:that.left_newspaper, year:that.year, newspaper:that.left_news_data[that.year]}));
+                $("#newspaper_comparison").append(_.template(data, {source:that.right_newspaper, year:that.year, newspaper:that.right_news_data[that.year]}));
               }});
     }
   });
