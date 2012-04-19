@@ -1,0 +1,23 @@
+<h1>News Faceoff</h1>
+
+<div id="timeline"><img src="images/timeline_none.png"/></div>
+
+<form id="select_newspapers">
+<select name="left" id="left_newspaper">
+  <option>Chicago Tribune</option>
+  <option>Los Angeles Times</option>
+  <option>New York Times</option>
+  <option>Washington Post</option>
+</select>
+
+<select name="right" id="right_newspaper">
+  <option>Chicago Tribune</option>
+  <option>Los Angeles Times</option>
+  <option>New York Times</option>
+  <option>Washington Post</option>
+</select>
+</form>
+
+<div id="newspaper_comparison">
+
+</div>

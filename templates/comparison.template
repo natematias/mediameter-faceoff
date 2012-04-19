@@ -1,0 +1,23 @@
+<h1>The Onion vs The 
+<table>
+<tr> 
+  <td class="first"><div class="left bar" style="width:100px;"/></td>
+  <td class="label"> Sports </td>
+  <td class="second"><div class="right bar" style="width:80px;"/></td>
+</tr>
+<tr> 
+  <td class="first"><div class="left bar" style="width:20px;"/></td>
+  <td class="label"> Foreign </td>
+  <td class="second"><div class="right bar" style="width:40px;"/></td>
+</tr>
+<tr> 
+  <td class="first"><div class="left bar" style="width:50px;"/></td>
+  <td class="label"> International </td>
+  <td class="second"><div class="right bar" style="width:63px;"/></td>
+</tr>
+<tr> 
+  <td class="first"><div class="left bar" style="width:30px;"/></td>
+  <td class="label"> Arts </td>
+  <td class="second"><div class="right bar" style="width:10px;"/></td>
+</tr>
+</table>

@@ -1,0 +1,76 @@
+body{
+  font-family:'Droid Sans',verdana,helvetica,arial,sans-serif;
+  font-size:18px;
+  color:#222;
+  background:#ccc;
+  margin:0;
+  padding:0;
+}
+
+h1{
+  font-size:24px;
+}
+
+#frame{
+  background:#ccc;
+  width:100%; 
+  height:100%;
+  text-align:center;
+}
+
+
+/* Top Area */
+
+#timeline{
+  margin-bottom:15px;
+}
+
+option.select{
+  width:166px;
+  height:26px;
+  line-height:26px;
+  font-size:18px;
+  font-weight:bold;
+}
+
+/* Styles for the graph itself */
+
+table{
+  width:100%;
+  border:0px;
+}
+
+table .first{
+  text-align:right;
+}
+
+table .second{
+  text-align:left;
+}
+
+table .label{
+  text-align:center;
+  width:100px;
+}
+
+.left{
+  text-align:right;
+}
+
+.right{
+  text-align:left;
+}
+
+.bar{
+  display:inline-block;
+  height:35px;
+  margin-left:0px;
+  margin-right:0px;
+}
+.left{
+  background:#333;
+}
+
+.right{
+  background:#333;
+}

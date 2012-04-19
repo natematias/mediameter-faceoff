@@ -1,0 +1,2 @@
+<div>Newspaper: <%= newspaper %></div>
+<div>Total: <%= total %> </div>
