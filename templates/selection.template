@@ -1,6 +1,6 @@
 <h1>News Faceoff</h1>
 
-<div id="timeline"><img src="images/timeline_none.png"/></div>
+<div id="timeline"><img id="1979" src="images/1979_unselected.png"/><img id="1989" src="images/1989_unselected.png"/><img id="1999" src="images/1999_unselected.png"/><img id="2009" src="images/2009_unselected.png"/></div>
 
 <form id="select_newspapers">
 <select name="left" id="left_newspaper">

@@ -5,12 +5,21 @@
      
     events: {
       "change #right_newspaper": "drawNewspaperComparison",
-      "change #left_newspaper": "drawNewspaperComparison"
+      "change #left_newspaper": "drawNewspaperComparison",
+      "click #1979": "year1979",
+      "click #1989": "year1989",
+      "click #1999": "year1999",
+      "click #2009": "year2009"
     },
 
     initialize: function(){
       _.bindAll(this, 'render');
       _.bindAll(this, 'loadNewspaperData');
+      _.bindAll(this, 'loadNewspaperData');
+      _.bindAll(this, 'year1979');
+      _.bindAll(this, 'year1989');
+      _.bindAll(this, 'year1999');
+      _.bindAll(this, 'year2009');
       this.loadNewspaperData();
       this.render();
     },
@@ -42,7 +51,35 @@
                 $("#newspaper_comparison").html(_.template(data, {source:that.left_newspaper, year:that.year, newspaper:that.left_news_data[that.year]}));
                 $("#newspaper_comparison").append(_.template(data, {source:that.right_newspaper, year:that.year, newspaper:that.right_news_data[that.year]}));
               }});
+    },
+  
+    year1979: function(){
+      this.changeYear(1979);
+    },
+    year1989: function(){
+      this.changeYear(1989);
+    },
+    year1999: function(){
+      this.changeYear(1999);
+    },
+    year2009: function(){
+      this.changeYear(2009);
+    },
+
+    changeYear: function(new_year){
+      this.year = new_year
+      years = [1979, 1989, 1999, 2009];
+      for( year in years){
+        year = years[year];
+        if( new_year == year){
+           $('#'+year.toString()).attr("src", "images/" + new_year.toString() + "_selected.png");
+        }else{
+           $('#'+year.toString()).attr("src", "images/" + year.toString() + "_unselected.png");
+        }
+      }
     }
+  
+    
   });
   var splashView = new SplashView;
   $("#frame").html(splashView.el);
