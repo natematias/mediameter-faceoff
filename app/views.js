@@ -20,6 +20,7 @@
       _.bindAll(this, 'year1989');
       _.bindAll(this, 'year1999');
       _.bindAll(this, 'year2009');
+      this.year = 1979;
       this.loadNewspaperData();
       this.render();
     },
@@ -38,7 +39,6 @@
 
     drawNewspaperComparison: function(){
       var that = this;
-      this.year = 1979;
       this.left_newspaper = $('#left_newspaper').val();
       this.right_newspaper = $('#right_newspaper').val();
       this.left_news_data = this.newspaperData[this.left_newspaper];
@@ -77,6 +77,7 @@
            $('#'+year.toString()).attr("src", "images/" + year.toString() + "_unselected.png");
         }
       }
+      this.drawNewspaperComparison();
     }
   
     
