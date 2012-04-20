@@ -34,43 +34,44 @@ option.select{
 }
 
 /* Styles for the graph itself */
-
-table{
-  width:100%;
-  border:0px;
+#total_graph{
+  border:2px solid #aaa;
+  padding:10px;
 }
 
-table .first{
-  text-align:right;
-}
-
-table .second{
-  text-align:left;
-}
-
-table .label{
-  text-align:center;
-  width:100px;
-}
-
-.left{
-  text-align:right;
-}
-
-.right{
-  text-align:left;
-}
-
-.bar{
+.sm{
   display:inline-block;
-  height:35px;
-  margin-left:0px;
-  margin-right:0px;
+  width:5px; height:5px;
+  margin:1px;
+  background:#666;
 }
+
+.sm.arts{
+  background:#a44;
+}
+
+.sm.foreign{
+  background:#3a3;
+}
+
+.sm.international{
+  background:#36a;
+}
+
+.sm.sports{
+  background:#399;
+}
+
 .left{
-  background:#333;
+text-align:right;
 }
 
 .right{
-  background:#333;
+  text-align:left;
+}
+
+.newspaper_visual{
+  width:400px;
+  display:inline-block;
+  vertical-align:top;
 }

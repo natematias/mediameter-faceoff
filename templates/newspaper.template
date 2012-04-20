@@ -1,6 +1,44 @@
+<div class="newspaper_visual <%=orientation%>">
 <div><strong><%= source %></strong></div>
 <div>Total: <%= newspaper.total %> </div>
-<div>Sports: <%= (newspaper["sports"] * (newspaper.total_articles/100)).toFixed(2) %>% </div>
-<div>Foreign: <%= (newspaper["international"] * (newspaper.total_articles/100)).toFixed(2) %>% </div>
-<div>International: <%= (newspaper["foreign"] * (newspaper.total_articles/100)).toFixed(2) %>% </div>
-<div>Arts: <%= (newspaper["arts"] * (newspaper.total_articles/100)).toFixed(2) %>% </div>
+<div class ="total_graph">
+<%
+
+var sports_percentage = (newspaper["sports"] * (newspaper.total_articles/100)).toFixed(2);
+var foreign_percentage = (newspaper["foreign"] * (newspaper.total_articles/100)).toFixed(2);
+var international_percentage = (newspaper["international"] * (newspaper.total_articles/100)).toFixed(2);
+var arts_percentage = (newspaper["arts"] * (newspaper.total_articles/100)).toFixed(2);
+
+var sports_estimate = newspaper.total/100 * sports_percentage;
+var foreign_estimate = newspaper.total/100 * foreign_percentage;
+var international_estimate = newspaper.total/100 * international_percentage;
+var arts_estimate = newspaper.total/100 * arts_percentage;
+
+var small_multiples = "";
+$.each(Array(parseInt(newspaper.total)), function(index, value){ 
+  var color_class = "";
+  if(sports_estimate > 0){
+    color_class="sports";
+    sports_estimate -=1;
+  }else if(arts_estimate > 0){
+    color_class="arts";
+    arts_estimate -=1;
+  }else if(international_estimate > 0){
+    color_class="international";
+    international_estimate -=1;
+  }else if(foreign_estimate >0){
+    color_class="foreign";
+    foreign_estimate -=1;
+  }
+  small_multiples += "<div class='sm " + color_class + "'></div>"
+});
+%>
+
+<%=small_multiples%>
+
+</div>
+<div>Sports: <%= sports_percentage %>% </div>
+<div>Foreign: <%= foreign_percentage %>% </div>
+<div>International: <%= international_percentage %>% </div>
+<div>Arts: <%= arts_percentage %>% </div>
+</div>
