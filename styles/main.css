@@ -2,7 +2,7 @@ body{
   font-family:'Droid Sans',verdana,helvetica,arial,sans-serif;
   font-size:18px;
   color:#222;
-  background:#ccc;
+  background:#333;
   margin:0;
   padding:0;
 }
@@ -12,7 +12,7 @@ h1{
 }
 
 #frame{
-  background:#ccc;
+  background:#eee;
   width:100%; 
   height:100%;
   text-align:center;
@@ -34,9 +34,37 @@ option.select{
 }
 
 /* Styles for the graph itself */
-#total_graph{
+.total_graph{
   border:2px solid #aaa;
   padding:10px;
+  background:#ddd;
+  border-radius:10px;
+  margin-bottom:10px;
+  display:inline-block;
+}
+
+.total_graph..gender{
+  width:400px;
+}
+.total_graph.gender div{
+  display:inline-block;
+  height:30px;
+  background:#666;
+}
+
+.total_graph.gender .male{
+  background:#68a;
+}
+.total_graph.gender .female{
+  background:#c68;
+}
+
+.total_graph.gender .unknown{
+  background:#666;
+}
+
+.total_graph.gender .remainder{
+  background:#aaa;
 }
 
 .sm{
@@ -71,7 +99,10 @@ text-align:right;
 }
 
 .newspaper_visual{
-  width:400px;
+  width:600px;
+  font-size:12px;
   display:inline-block;
   vertical-align:top;
+  margin-left:10px;
+  margin-right:10px;
 }

@@ -1,13 +1,32 @@
 <div class="newspaper_visual <%=orientation%>">
-<div><strong><%= source %></strong></div>
-<div>Total: <%= newspaper.total %> </div>
+<!--<div><strong><%= source %></strong></div>-->
+
+<!-- Gender Graph -->
+<%
+var female_percentage = ((newspaper["female_author"] / newspaper.total_articles) * 100).toFixed(2);
+var male_percentage = ((newspaper["male_author"] / newspaper.total_articles) * 100).toFixed(2);
+var unknown_gender_percentage = ((newspaper["unknown_gender_author"] / newspaper.total_articles) * 100).toFixed(2);
+
+if( newspaper["unknown_gender_author"== 0]){
+  unknown_gender_percentage = 0;
+}
+
+var gender_remainder = 100 - parseFloat(female_percentage) - parseFloat(male_percentage) - parseFloat(unknown_gender_percentage);
+var gender_multiplier = 4;
+%>
+<div class="total_graph gender">
+  <div style="display:block; background:none;">Gender % (pink= female, blue = male, dark grey = unknown, light grey = no byline)</div>
+  <div class="female" style="width:<%=female_percentage * gender_multiplier%>px"></div><div class="male" style="width:<%=male_percentage * gender_multiplier %>px"></div><div class="unknown" style="width:<%=unknown_gender_percentage * gender_multiplier%>px"></div><div class="remainder" style="width:<%=gender_remainder * gender_multiplier%>px"></div>
+</div>
+
+<!-- Size Graph -->
 <div class ="total_graph">
 <%
 
-var sports_percentage = (newspaper["sports"] * (newspaper.total_articles/100)).toFixed(2);
-var foreign_percentage = (newspaper["foreign"] * (newspaper.total_articles/100)).toFixed(2);
-var international_percentage = (newspaper["international"] * (newspaper.total_articles/100)).toFixed(2);
-var arts_percentage = (newspaper["arts"] * (newspaper.total_articles/100)).toFixed(2);
+var sports_percentage = ((newspaper["sports"] / newspaper.total_articles) * 100).toFixed(2);
+var foreign_percentage = ((newspaper["foreign"] / newspaper.total_articles) * 100).toFixed(2);
+var international_percentage = ((newspaper["international"] / newspaper.total_articles) * 100).toFixed(2);
+var arts_percentage = ((newspaper["arts"] / newspaper.total_articles) *100).toFixed(2);
 
 var sports_estimate = newspaper.total/100 * sports_percentage;
 var foreign_estimate = newspaper.total/100 * foreign_percentage;
@@ -34,9 +53,12 @@ $.each(Array(parseInt(newspaper.total)), function(index, value){
 });
 %>
 
+<div>total articles monday to friday: <%= newspaper.total %> </div>
 <%=small_multiples%>
-
 </div>
+
+
+
 <div>Sports: <%= sports_percentage %>% </div>
 <div>Foreign: <%= foreign_percentage %>% </div>
 <div>International: <%= international_percentage %>% </div>
