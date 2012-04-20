@@ -23,18 +23,20 @@ var gender_multiplier = 4;
 <div class ="total_graph">
 <%
 
+var daily_total = newspaper.total/5;
+
 var sports_percentage = ((newspaper["sports"] / newspaper.total_articles) * 100).toFixed(2);
 var foreign_percentage = ((newspaper["foreign"] / newspaper.total_articles) * 100).toFixed(2);
 var international_percentage = ((newspaper["international"] / newspaper.total_articles) * 100).toFixed(2);
 var arts_percentage = ((newspaper["arts"] / newspaper.total_articles) *100).toFixed(2);
 
-var sports_estimate = newspaper.total/100 * sports_percentage;
-var foreign_estimate = newspaper.total/100 * foreign_percentage;
-var international_estimate = newspaper.total/100 * international_percentage;
-var arts_estimate = newspaper.total/100 * arts_percentage;
+var sports_estimate = (daily_total/100 * sports_percentage);
+var foreign_estimate = (daily_total/100 * foreign_percentage);
+var international_estimate = (daily_total/100 * international_percentage);
+var arts_estimate = (daily_total/100 * arts_percentage);
 
 var small_multiples = "";
-$.each(Array(parseInt(newspaper.total)), function(index, value){ 
+$.each(Array(parseInt(daily_total)), function(index, value){ 
   var color_class = "";
   if(sports_estimate > 0){
     color_class="sports";
